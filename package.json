@@ -1,0 +1,46 @@
+{
+  "name": "cvrp_data",
+  "version": "1.0.0",
+  "description": "cvrp data visualizer",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ma-he-sh/CVRP_data.git"
+  },
+  "keywords": [
+    "cvrp",
+    "aco",
+    "sweep"
+  ],
+  "author": "ma-he-sh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ma-he-sh/CVRP_data/issues"
+  },
+  "homepage": "https://github.com/ma-he-sh/CVRP_data#readme",
+  "dependencies": {
+    "chart.js": "^2.9.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "support-color": "^7.1.0",
+    "supports-color": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "css-loader": "^5.0.1",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.0",
+    "source-map-loader": "^2.0.0",
+    "style-loader": "^2.0.0",
+    "thread-loader": "^3.0.1",
+    "ts-loader": "^8.0.12",
+    "typescript": "^4.1.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0"
+  }
+}
