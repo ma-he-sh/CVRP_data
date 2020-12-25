@@ -3,6 +3,31 @@ export const preConfigs = {
         title : 'Ant Colony Algorithm',
         controls: [
             {
+                label : '# Dataset',
+                type : 'select',
+                title: 'Dataset',
+                name : 'aco_dataset',
+                options: [
+                    {
+                        name: '40',
+                        value: 40,
+                        selected: true,
+                    },
+                    {
+                        name: '60',
+                        value: 60,
+                    },
+                    {
+                        name: '100',
+                        value: 100,
+                    },
+                    {
+                        name: '200',
+                        value: 200
+                    }
+                ]
+            },
+            {
                 label : '# Ants',
                 type : 'select',
                 title: 'Number of ants',

@@ -1,17 +1,34 @@
 declare var matrix:any;
+declare var matrix_toronto:any;
 
 export class MatrixLoader {
     private MATRIX:any;
+    private datasetID:string;
 
-    public constructor() {
+    public constructor( dataset="ontario" ) {
+        this.datasetID = dataset;
         this.init();
     }
 
     init = () => {
-        if ( matrix ) {
-            this.MATRIX = matrix;
-            if( '0' in this.MATRIX ) {
-                console.log( this.MATRIX[0] )
+        if( "ontario" === this.datasetID ) {
+            if ( matrix ) {
+                this.MATRIX = matrix;
+                if( '0' in this.MATRIX ) {
+                    console.log( this.MATRIX[0] )
+                }
+            } else {
+                throw new Error(`Dataset not found ${this.datasetID}`);
+            }
+        }
+        if( "toronto" === this.datasetID ) {
+            if( matrix_toronto ) {
+                this.MATRIX = matrix_toronto;
+                if( '0' in this.MATRIX ) {
+                    console.log( this.MATRIX[0] )
+                }
+            } else {
+                throw new Error(`Dataset not found ${this.datasetID}`);
             }
         }
     }
