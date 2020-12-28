@@ -51,6 +51,7 @@ export class AlgoChart extends React.Component<any, any> {
                         {
                             label: `Vehicle ${numVehicles}`,
                             fill: false,
+                            borderColor: assignColor,
                             pointBorderWidth: 2,
                             pointHoverRadius: 8,
                             pointHoverBackgroundColor: 'rgba(75,192,192,1)',
