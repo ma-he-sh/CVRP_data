@@ -15,7 +15,7 @@ export class AlgoChart extends React.Component<any, any> {
 
     toggleChart() {
         if( !this.state.isToggledOn ) {
-            console.log("load graphs");
+            //console.log("load graphs");
             this.setPlot();
         }
 
@@ -25,8 +25,8 @@ export class AlgoChart extends React.Component<any, any> {
     }
 
     setPlot() {
-        console.log("clicked", this.props.run);
-        console.log("dataset", this.props.dataset);
+        //console.log("clicked", this.props.run);
+        //console.log("dataset", this.props.dataset);
 
         var datasetLoader = DatasetLoader.getInstance();
 
