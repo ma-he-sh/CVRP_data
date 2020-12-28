@@ -25,6 +25,7 @@
     "chart.js": "^2.9.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-feather": "^2.0.9",
     "support-color": "^7.1.0",
     "supports-color": "^8.1.0"
   },

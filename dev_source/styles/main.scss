@@ -31,14 +31,192 @@ html, body {
         right: 0;
         padding-bottom: 100px;
     }
+
+    .app--wrapper {
+        width: 100%;
+        height: auto;
+        float: left;
+        padding: 10px;
+        box-sizing: border-box;
+    }
     
     .app--section {
         width: 100%;
         height: auto;
         float: left;
-        margin-bottom: 10px;
-        padding: 10px;
         box-sizing: border-box;
+    }
+
+    .app--alg-section {
+        width: 100%;
+        height: auto;
+        float: left;
+        box-sizing: border-box;
+
+        .app--dataset-name {
+            max-width: 120px;
+            border-radius: 2.5px;
+            background-color: #0d52bf;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px 10px 2px 10px;
+            color: #FFFFFF;
+            line-height: 18px;
+            margin-bottom: 10px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #002e99;
+            }
+        }
+
+        .app--dataset-content {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(#95a3ab, 0.4);
+            border-radius: 2.5px;
+            box-sizing: border-box;
+            float: left;
+
+            .app--alg-wrapper {
+                width: 100%;
+                height: auto;
+                float: left;
+                padding: 10px;
+                box-sizing: border-box;
+                background-color: #FFFFFF;
+                border-radius: 2.5px;
+                border: 1px solid rgba(#95a3ab, 0.4);
+
+                .app--alg-wrapper-content {
+                    width: 100%;
+                    height: auto;
+                    float: left;
+
+                    .app--alg-name {
+                        width: 100%;
+                        height: auto;
+                        float: left;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+
+                    .app--alg-description {
+                        width: 100%;
+                        height: auto;
+                        float: left;
+                        font-size: 12px;
+                    }
+
+                    .app--alg-runs {
+                        width: 100%;
+                        height: auto;
+                        float: left;
+
+                        .algo--run-wrapper {
+                            width: 100%;
+                            height: auto;
+                            float: left;
+                            padding: 10px 0px 10px 0px;
+
+                            .algo---row {
+                                width: 100%;
+                                height: 32px;
+                                float: left;
+                                margin-bottom: 6px;
+
+                                .algo--run-header {
+                                    width: 100%;
+                                    height: 32px;
+                                    float: left;
+                                    display: flex;
+
+                                    .algo--id {
+                                        text-align: center;
+                                        font-size: 12px;
+                                        font-weight: bold;
+                                        line-height: 32px;
+                                        min-width: 100px;
+                                        float: left;
+                                        border-radius: 2.5px;
+                                    }
+
+                                    .algo--id.ACO {
+                                        color: #273445;
+                                        background-color: #f9c440;
+                                    }
+
+                                    .algo--id.SWEEP {
+                                        color: #FFFFFF;
+                                        background-color: #0d52bf;
+                                    }
+
+                                    .algo--id.GA {
+                                        color: #273445;
+                                        background-color: #7239b3;
+                                    }
+
+                                    .algo--param {
+                                        width: 100%;
+                                        float: left;
+                                        flex: 1;
+                                        display: flex;
+                                        box-sizing: border-box;
+                                        padding: 4px;
+
+                                        .params {
+                                            text-align: center;
+                                            min-width: 60px;
+                                            max-width: 120px;
+                                            width: auto;
+                                            float: left;
+                                            font-size: 12px;
+                                            line-height: 22px;
+                                            padding: 0px 10px 0px 10px;
+                                            margin-right: 10px;
+                                            font-weight: bold;
+                                            color: #FFFFFF;
+                                            border-radius: 2.5px;
+                                            background-color: #485a6c;
+                                        }
+
+                                        .params.highlight  {
+                                            background-color: #28bca3;
+                                        }
+
+                                        .params:not(:last-child) {
+                                            padding-left: 10px;
+                                        }
+                                    }
+
+                                    .algo--play {
+                                        width: 32px;
+                                        height: 32px;
+                                        padding-top: 3px;
+                                        line-height: 32px;
+                                        text-align: center;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .algo--run-content {
+                                    width: 100%;
+                                    height: auto;
+                                    float: left;
+                                    padding: 10px;
+                                    box-sizing: border-box;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .app--alg-wrapper:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
     }
     
     .app--title {
@@ -51,15 +229,6 @@ html, body {
         float: left;
     }
 
-    .app--alg-name {
-        width: 100%;
-        height: auto;
-        font-size: 16px;
-        text-indent: left;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
     .app--description {
         width: 100%;
         height: auto;
@@ -67,18 +236,6 @@ html, body {
         text-align: center;
         float: left;
         margin-bottom: 10px;
-    }
-
-    .app--controls {
-        width: 100%;
-        border: 1px solid #95a3ab;
-        min-height: 40px;
-        height: auto;
-        float: left;
-        padding: 10px 10px 0px 10px;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-        border-radius: 2.5px;
     }
 
     .app--graph-wrapper {
@@ -122,6 +279,8 @@ html, body {
             border-left: 1px solid #95a3ab;
             cursor: pointer;
         }
+
+
     }
 
     .control--group:not(:last-child) {
