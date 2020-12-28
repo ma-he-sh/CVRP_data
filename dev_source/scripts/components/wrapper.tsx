@@ -1,22 +1,25 @@
 import React, {Component} from "react";
 import { PlayCircle } from "react-feather";
 
-export class AlgoRuns extends React.Component<any, any> {
+export class AlgoChart extends React.Component<any, any> {
     constructor(props:any) {
         super(props);
-
         this.state = {
-            show: false,
+            isToggledOn: false,
         }
+        this.toggleChart = this.toggleChart.bind(this);
     }
 
-    toggleChart(e:any) {
-        console.log( e );
+    toggleChart() {
+        this.setState((state:any) => ({
+            isToggledOn: !state.isToggledOn
+        }));
+        console.log("clicked");
     }
 
     render() {
         var classID = "algo--id";
-        switch ( this.props.id ) {
+        switch ( this.props.algoid ) {
             case "ACO":
                 classID += " ACO";
                 break;
@@ -28,30 +31,46 @@ export class AlgoRuns extends React.Component<any, any> {
                 break;
         }
 
+        var run = this.props.run;
+
+        var changeField = "";
+        if( run.field ) {
+            changeField = run.field;
+        }
+
+        var showClass = "algo--run-content";
+        if( this.state.isToggledOn ) {
+            showClass = "algo--run-content show";
+        }
+
+        return <div className="algo---row">
+            <div className="algo--run-header">
+                <div className={classID}>{this.props.algoid}</div>
+                <div className="algo--param">
+                    {Object.keys(run.fields).map((field:any, index:number) => {
+                        var highlightClass = "params";
+                        if( field === changeField ) {
+                            highlightClass = "params highlight";
+                        }
+                        return <div className={highlightClass}>{field} : {run.fields[field]}</div>
+                    })}
+                </div>
+                <div className="algo--play" onClick={this.toggleChart}><PlayCircle /></div>
+            </div>
+            <div className={showClass}>SHOW</div>
+        </div>
+    }
+}
+
+export class AlgoRuns extends React.Component<any, any> {
+    constructor(props:any) {
+        super(props);
+    }
+
+    render() {
         return <div className="algo--run-wrapper">
             {this.props.runs.map((run:any, index:number) => {
-                var changeField = "";
-                if( run.field ) {
-                    changeField = run.field;
-                }
-                return <div className="algo---row">
-                    <div className="algo--run-header">
-                        <div className={classID}>{this.props.id}</div>
-                        <div className="algo--param">
-                            {Object.keys(run.fields).map((field:any, index:number) => {
-                                var highlightClass = "params";
-                                if( field === changeField ) {
-                                    highlightClass = "params highlight";
-                                }
-                                return <div className={highlightClass}>{field} : {run.fields[field]}</div>
-                            })}
-                        </div>
-                        <div className="algo--play" onClick={this.toggleChart(this)}><PlayCircle /></div>
-                    </div>
-                    {this.state.show &&
-                        <div className="algo--run-content"></div>
-                    }
-                </div>
+                return <AlgoChart algoid={this.props.id} run={run} />
             })}
         </div>
     }
@@ -92,7 +111,7 @@ export class AlgoSection extends React.Component<any, any> {
             <div className="app--section">
                 <div className="app--dataset-content">
                     {Object.keys(this.props.data).map((algo:any, index:number) => {
-                        return <AlgoWrapper data={this.props.data[algo]} />
+                        return <AlgoWrapper dataset={this.props.name} data={this.props.data[algo]} />
                     })}
                 </div>
             </div>

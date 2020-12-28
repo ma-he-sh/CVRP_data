@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49668af8-3da7-454e-b79c-94c5c2875f93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/CVRP_data.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev_source/scripts/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dev_source/scripts/app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev_source/scripts/components/wrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dev_source/scripts/components/wrapper.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev_source/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dev_source/styles/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/libs/result_aco.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/cvrp_module.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/cvrp_module.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/cvrp_module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/cvrp_module.js.map" afterDir="false" />
     </list>
@@ -50,7 +44,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609105498619</updated>
       <workItem from="1609105500110" duration="22000" />
-      <workItem from="1609105535445" duration="15059000" />
+      <workItem from="1609105535445" duration="17153000" />
     </task>
     <servers />
   </component>
