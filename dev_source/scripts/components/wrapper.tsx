@@ -1,7 +1,10 @@
 import React, {Component} from "react";
 import { PlayCircle } from "react-feather";
+import {MatrixGraph} from "./chart";
+import {DatasetLoader} from "../data/dataset";
 
 export class AlgoChart extends React.Component<any, any> {
+    private plotdata:Array<any>=[];
     constructor(props:any) {
         super(props);
         this.state = {
@@ -11,10 +14,60 @@ export class AlgoChart extends React.Component<any, any> {
     }
 
     toggleChart() {
+        if( !this.state.isToggledOn ) {
+            console.log("load graphs");
+            this.setPlot();
+        }
+
         this.setState((state:any) => ({
             isToggledOn: !state.isToggledOn
         }));
-        console.log("clicked");
+    }
+
+    setPlot() {
+        console.log("clicked", this.props.run);
+        console.log("dataset", this.props.dataset);
+
+        var datasetLoader = DatasetLoader.getInstance();
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF'.split('');
+            var color = '#';
+            for (var i = 0; i < 6; i++ ) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        this.plotdata = [];
+        var numVehicles=1;
+        if( 'data' in this.props.run ) {
+            if( this.props.run.data.length > 0 ) {
+                Object.keys( this.props.run.data ).map(( run:any, index:number ) => {
+                    var payload = datasetLoader.get_data_and_labels( this.props.dataset, this.props.run.data[run] );
+
+                    var assignColor  = getRandomColor();
+                    this.plotdata.push(
+                        {
+                            label: `Vehicle ${numVehicles}`,
+                            fill: false,
+                            pointBorderWidth: 2,
+                            pointHoverRadius: 8,
+                            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+                            pointHoverBorderColor: 'rgba(220,220,220,1)',
+                            pointHoverBorderWidth: 2,
+                            backgroundColor: assignColor,
+                            pointRadius: 8,
+                            showLine: true,
+                            lineTension: 0,
+                            labels: payload.label,
+                            data: payload.data
+                        }
+                    )
+                    numVehicles++;
+                });
+            }
+        }
     }
 
     render() {
@@ -39,8 +92,10 @@ export class AlgoChart extends React.Component<any, any> {
         }
 
         var showClass = "algo--run-content";
+        var showGraph = false;
         if( this.state.isToggledOn ) {
             showClass = "algo--run-content show";
+            showGraph = true;
         }
 
         return <div className="algo---row">
@@ -57,7 +112,11 @@ export class AlgoChart extends React.Component<any, any> {
                 </div>
                 <div className="algo--play" onClick={this.toggleChart}><PlayCircle /></div>
             </div>
-            <div className={showClass}>SHOW</div>
+            <div className={showClass}>
+                {showGraph &&
+                    <MatrixGraph graph={this.plotdata} />
+                }
+            </div>
         </div>
     }
 }
@@ -70,7 +129,7 @@ export class AlgoRuns extends React.Component<any, any> {
     render() {
         return <div className="algo--run-wrapper">
             {this.props.runs.map((run:any, index:number) => {
-                return <AlgoChart algoid={this.props.id} run={run} />
+                return <AlgoChart dataset={this.props.dataset} algoid={this.props.id} run={run} />
             })}
         </div>
     }
@@ -90,7 +149,7 @@ export class AlgoWrapper extends React.Component<any, any> {
                 }
                 {this.props.data.runs.length > 0 &&
                     <div className="app--alg-runs">
-                        <AlgoRuns id={this.props.data.id} runs={this.props.data.runs} />
+                        <AlgoRuns dataset={this.props.dataset} id={this.props.data.id} runs={this.props.data.runs} />
                     </div>
                 }
             </div>

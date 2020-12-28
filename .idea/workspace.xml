@@ -2,10 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49668af8-3da7-454e-b79c-94c5c2875f93" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dataset.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev_source/scripts/data/dataset.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/cordinates_100.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/cordinates_250.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/cordinates_toronto.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/data_1_23.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/data_2_23.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/data_2_50.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/data_2_96.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/data_3_150.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/data_3_200.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/data_3_23.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/data_3_240.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/data_3_50.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/data_3_96.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/datasets.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/distance_100_cities.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/distance_250_cities.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/datasets/distance_toronto.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev_source/scripts/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dev_source/scripts/app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev_source/scripts/components/chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dev_source/scripts/components/chart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev_source/scripts/components/wrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dev_source/scripts/components/wrapper.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev_source/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dev_source/styles/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/cvrp_module.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/cvrp_module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/cvrp_module.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/cvrp_module.js.LICENSE.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/cvrp_module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/cvrp_module.js.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609105498619</updated>
       <workItem from="1609105500110" duration="22000" />
-      <workItem from="1609105535445" duration="17153000" />
+      <workItem from="1609105535445" duration="26645000" />
     </task>
     <servers />
   </component>

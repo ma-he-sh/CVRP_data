@@ -25,16 +25,6 @@ export default class App extends React.Component<{}, {}>{
 
     loadData() {
         var resultData = new ResultManager();
-        // var aco_data = resultData.get_data_by_algorithm("aco");
-        // this.data.aco = aco_data;
-        //
-        // var ga_data  = resultData.get_data_by_algorithm("ga");
-        // this.data.ga = ga_data;
-        //
-        // var sweep_data = resultData.get_data_by_algorithm("sweep");
-        // this.data.sweep = sweep_data;
-        //
-
         this.datasets = resultData.get_all_datasets();
     }
 

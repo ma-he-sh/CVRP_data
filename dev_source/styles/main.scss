@@ -212,10 +212,16 @@ html, body {
                                     padding: 10px;
                                     box-sizing: border-box;
                                     display: none;
-                                    background-color: rgba(#95a3ab, 0.65);
+                                    background-color: #FFFFFF;
                                     border: 1px solid #95a3ab;
                                     box-sizing: border-box;
                                     margin: 10px 0px 20px 0px;
+
+                                    .algo--canvas {
+                                        width: 100%;
+                                        height: auto;
+                                        float: left;
+                                    }
                                 }
 
                                 .algo--run-content.show {
