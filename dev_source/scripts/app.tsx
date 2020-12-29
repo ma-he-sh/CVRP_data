@@ -34,7 +34,7 @@ export default class App extends React.Component<{}, {}>{
             <div className='app--body'>
                 <div className='app--section'>
                     <div className='app--title'>CVRP Data Visualizer</div>
-                    <div className='app--description'>Pre-recorded optimization data for Genetic, Ant Colony Optimization and Sweep Algorithm </div>
+                    <div className='app--description'>Recorded optimization data for Genetic, Ant Colony Optimization and Sweep Algorithm</div>
                 </div>
                 <div className='app--alg-section'>
                     { this.datasets.map(( dataset:any, index:number ) => {

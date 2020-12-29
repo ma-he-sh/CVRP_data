@@ -57,6 +57,28 @@ export class DatasetLoader {
         }
     }
 
+    public get_depot_point( dataset:string, depot_id:number ) {
+        var payload:any = this.get_dataset( dataset );
+
+        var retData:PayloadData = {
+            label : [],
+            data: [],
+            demands: [],
+        }
+
+        if( dataset ) {
+            var depot = payload[depot_id];
+            retData.label.push(depot.location);
+            retData.data.push({
+                x: depot.lat,
+                y: depot.lng,
+            });
+            retData.demands.push( depot.demand );
+        }
+
+        return retData;
+    }
+
     public get_data_and_labels( dataset:string, points:Array<number>, addDepot:boolean=true ) {
         var payload:any = this.get_dataset( dataset );
 
@@ -68,7 +90,7 @@ export class DatasetLoader {
         if( dataset ) {
             if( addDepot ) {
                 points.unshift(1); // add depot
-                points.push(1);          // add depot
+                points.push(1);    // add depot
             }
 
             if( points.length > 0 ) {

@@ -40,6 +40,32 @@ export class AlgoChart extends React.Component<any, any> {
         }
 
         this.plotdata = [];
+
+        var depotColor  = getRandomColor();
+        var depotRef = datasetLoader.get_depot_point( this.props.dataset, 1 );
+        if( depotRef ) {
+            // ADD DEPOT
+            this.plotdata.push(
+                {
+                    label: `DEPOT`,
+                    fill: false,
+                    borderColor: depotColor,
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 12,
+                    pointStyle: 'triangle',
+                    pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+                    pointHoverBorderColor: 'rgba(220,220,220,1)',
+                    pointHoverBorderWidth: 2,
+                    backgroundColor: depotColor,
+                    pointRadius: 12,
+                    showLine: true,
+                    lineTension: 0,
+                    labels: depotRef.label,
+                    data: depotRef.data
+                }
+            );
+        }
+
         var numVehicles=1;
         if( 'data' in this.props.run ) {
             if( this.props.run.data.length > 0 ) {
@@ -115,7 +141,7 @@ export class AlgoChart extends React.Component<any, any> {
             </div>
             <div className={showClass}>
                 {showGraph &&
-                    <MatrixGraph graph={this.plotdata} />
+                    <MatrixGraph graph={this.plotdata} bestsol={run.distance} />
                 }
             </div>
         </div>
@@ -164,9 +190,45 @@ export class AlgoSection extends React.Component<any, any> {
     }
 
     render() {
+        var algoname = "";
+        switch( this.props.name ) {
+            case "data_1_23":
+                algoname = "Toronto-c23-1";
+                break;
+            case "data_2_23":
+                algoname = "Toronto-c23-2";
+                break;
+            case "data_2_50":
+                algoname = "Ontario-c50-2";
+                break;
+            case "data_2_96":
+                algoname = "Ontario-c96-2";
+                break;
+            case "data_3_23":
+                algoname = "Ontario-c23-3";
+                break;
+            case "data_3_50":
+                algoname = "Ontario-c50-3";
+                break;
+            case "data_3_96":
+                algoname = "Ontario-c96-3";
+                break
+            case "data_3_150":
+                algoname = "Ontario-c150-3";
+                break
+            case "data_3_200":
+                algoname = "Ontario-c200-3";
+                break
+            case "data_3_200":
+                algoname = "Ontario-c200-3";
+                break
+            case "data_3_250":
+                algoname = "Ontario-c250-3";
+                break
+        }
         return <div className="app--wrapper">
             <div className="app--section">
-                <div className="app--dataset-name">{this.props.name}</div>
+                <div className="app--dataset-name">{algoname}</div>
             </div>
             <div className="app--section">
                 <div className="app--dataset-content">
