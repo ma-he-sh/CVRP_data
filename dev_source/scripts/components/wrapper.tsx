@@ -5,6 +5,8 @@ import {DatasetLoader} from "../data/dataset";
 
 export class AlgoChart extends React.Component<any, any> {
     private plotdata:Array<any>=[];
+    private graphdata:Array<any>=[];
+
     constructor(props:any) {
         super(props);
         this.state = {
@@ -64,6 +66,7 @@ export class AlgoChart extends React.Component<any, any> {
                     data: depotRef.data
                 }
             );
+            this.graphdata.push(depotRef.payload);
         }
 
         var numVehicles=1;
@@ -91,6 +94,7 @@ export class AlgoChart extends React.Component<any, any> {
                             data: payload.data
                         }
                     )
+                    this.graphdata.push(payload.payload);
                     numVehicles++;
                 });
             }
@@ -141,7 +145,7 @@ export class AlgoChart extends React.Component<any, any> {
             </div>
             <div className={showClass}>
                 {showGraph &&
-                    <MatrixGraph graph={this.plotdata} bestsol={run.distance} />
+                    <MatrixGraph graph={this.plotdata} bestsol={run.distance} graphdata={this.graphdata} />
                 }
             </div>
         </div>

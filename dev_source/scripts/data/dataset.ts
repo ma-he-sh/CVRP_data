@@ -9,10 +9,17 @@ export interface LocData {
     y:number,
 }
 
+export interface LocInfo {
+    index:number,
+    location:string,
+    demand:number,
+}
+
 export interface PayloadData {
     label:Array<string>,
     data:Array<LocData>,
-    demands:Array<number>
+    demands:Array<number>,
+    payload:Array<LocInfo>,
 }
 
 export class DatasetLoader {
@@ -64,6 +71,7 @@ export class DatasetLoader {
             label : [],
             data: [],
             demands: [],
+            payload: [],
         }
 
         if( dataset ) {
@@ -74,6 +82,11 @@ export class DatasetLoader {
                 y: depot.lng,
             });
             retData.demands.push( depot.demand );
+            retData.payload.push( {
+                index: depot_id,
+                location: depot.location,
+                demand: depot.demand,
+            } );
         }
 
         return retData;
@@ -86,6 +99,7 @@ export class DatasetLoader {
             label: [],
             data:  [],
             demands: [],
+            payload: [],
         }
         if( dataset ) {
             if( addDepot ) {
@@ -104,6 +118,11 @@ export class DatasetLoader {
                             y: refPoint.lng
                         } )
                         retData.demands.push(refPoint.demand);
+                        retData.payload.push({
+                            index: point,
+                            location: refPoint.location,
+                            demand: refPoint.demand,
+                        });
                     }
                 } )
             }
